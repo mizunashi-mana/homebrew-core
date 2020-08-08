@@ -123,6 +123,7 @@ class Ghc < Formula
 
     ENV.deparallelize { system "make", "install" }
     Dir.glob(lib/"*/package.conf.d/package.cache") { |f| rm f }
+    Dir.glob(lib/"*/package.conf.d/package.cache.lock") { |f| rm f }
   end
 
   def post_install
